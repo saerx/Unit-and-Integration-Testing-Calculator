@@ -67,7 +67,6 @@ describe('calculator', function () {
     calculator.clearClick();
     assert.strictEqual(calculator.runningTotal, 0)
     assert.strictEqual(calculator.previousTotal, 6)
-
   })
 
 
