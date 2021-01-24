@@ -29,9 +29,18 @@ describe('calculator functionality', function() {
     running_total = element(by.css('#running_total'))
     element(by.css('#number4')).click();
     element(by.css('#operator_add')).click();
-    element(by.css('#operator_add')).click();
+    element(by.css('#number8')).click();
     element(by.css('#operator_equals')).click();
-    expect(running_total.getAttribute('value')).to.eventually.equal('16')
+    expect(running_total.getAttribute('value')).to.eventually.equal('12')
+  })
+
+  it('should be able to chain multiple operators', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number3')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('36')
   })
 
 });
